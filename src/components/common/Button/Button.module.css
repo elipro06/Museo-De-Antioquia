@@ -1,0 +1,123 @@
+﻿/* ── Brand Red for Museo de Antioquia ── */
+.brandRed {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+}
+
+.brandRed:hover,
+.brandRed:active {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+/* ── Button base — editorial, minimal ── */
+.btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: clamp(0.82rem, 2vw, 0.95rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  border: 1px solid var(--color-dark);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  transition: none;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+
+/* ── Primary ── */
+.primary {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+}
+
+.primary:hover,
+.primary:active {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* ── Outline (sobre fondos oscuros) ── */
+.outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+.outline:hover,
+.outline:active {
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+/* ── Sticker — calcomanía pegada, clip-path irregular ── */
+.sticker {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  clip-path: polygon(
+    0% 8%, 4% 2%, 14% 4%, 28% 1%, 43% 3%, 58% 1%, 74% 4%, 88% 2%, 100% 5%,
+    98% 20%, 100% 38%, 99% 54%, 100% 72%, 98% 90%,
+    100% 100%, 88% 98%, 74% 100%, 58% 97%, 42% 100%, 27% 98%, 13% 100%, 3% 96%,
+    0% 84%, 2% 66%, 0% 48%, 2% 28%
+  );
+  padding: 0.9rem 1.25rem;
+  transition: none;
+}
+
+.sticker:hover,
+.sticker:active {
+  background-color: #8d2448;
+  color: var(--color-white);
+  border-color: #8d2448;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 0.75rem 1.5rem;
+  }
+
+  .sticker {
+    padding: 0.9rem 1.8rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .btn {
+    padding: 0.85rem 1.8rem;
+  }
+
+  .sticker {
+    padding: 0.95rem 2.2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .btn {
+    font-size: 0.95rem;
+  }
+}

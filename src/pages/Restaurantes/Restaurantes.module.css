@@ -1,0 +1,173 @@
+
+.restaurantesMain {
+  background: #fff;
+  min-height: calc(100vh - 72px);
+}
+
+.restaurantesContainer {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 84px 5% 96px;
+}
+
+.header {
+  margin-bottom: 4.5rem;
+}
+
+.restaurantesTitle {
+  max-width: 20ch;
+  margin: 0;
+  color: #111111;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.restaurantesIntro {
+  max-width: 42rem;
+  margin: 1rem 0 0;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+
+.serviciosGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5.5rem 6rem;
+  align-items: start;
+}
+
+
+.servicioBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+}
+
+.servicioImgWrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #e6e6e6;
+  border-radius: 0;
+  overflow: hidden;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.servicioImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  transform: scale(1);
+  transition: transform 0.6s ease;
+}
+
+.servicioBlock:hover .servicioImg {
+  transform: scale(1.03);
+}
+
+.servicioInfo {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #000;
+}
+
+.servicioTitulo {
+  margin: 0 0 0.85rem;
+  color: #000;
+  font-family: var(--font-heading);
+  font-size: clamp(1.45rem, 2vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.15;
+  text-align: left;
+}
+
+.servicioDesc {
+  margin: 0;
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+}
+
+@media (max-width: 800px) {
+  .restaurantesContainer {
+    padding: 60px 18px 54px;
+  }
+
+  .header {
+    margin-bottom: 2.25rem;
+  }
+
+  .serviciosGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .restaurantesTitle {
+    max-width: 12ch;
+    font-size: clamp(2.25rem, 9vw, 3.2rem);
+  }
+
+  .restaurantesIntro {
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+
+  .servicioInfo {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+  }
+
+  .servicioTitulo {
+    font-size: clamp(1.25rem, 4vw, 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurantesContainer {
+    padding: 48px 12px 42px;
+  }
+
+  .header {
+    margin-bottom: 1.75rem;
+  }
+
+  .restaurantesTitle {
+    max-width: 10ch;
+    font-size: clamp(1.75rem, 8vw, 2.25rem);
+  }
+
+  .restaurantesIntro {
+    font-size: 0.9rem;
+  }
+
+  .servicioImg {
+    object-fit: cover;
+  }
+
+  .servicioTitulo {
+    font-size: clamp(1.1rem, 4.5vw, 1.3rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .servicioDesc {
+    font-size: 0.9rem;
+  }
+}
+

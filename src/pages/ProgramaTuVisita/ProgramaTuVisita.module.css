@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.page {
+  min-height: calc(100vh - 72px);
+  background: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.recorridosContainer {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 5% 96px;
+}
+
+.scheduleSection {
+  margin-top: 84px;
+}
+
+.introBlock {
+  max-width: 980px;
+  margin-bottom: 3rem;
+}
+
+.scheduleBody {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.sectionEyebrow {
+  display: inline-block;
+  margin-bottom: 1.25rem;
+  color: #666666;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.sectionTitle {
+  margin: 0 0 1rem;
+  color: #000000;
+  font-family: 'BigCity Grotesque Pro', var(--font-heading), sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.sectionText {
+  margin: 0 0 1.15rem;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.sectionText:last-of-type {
+  margin-bottom: 3rem;
+}
+
+.featuredArtwork {
+  margin: 0;
+}
+
+.artworkCaption {
+  margin-top: 0.9rem;
+  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.featuredArtworkImage {
+  display: block;
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.scheduleColumn {
+  min-width: 0;
+}
+
+.scheduleList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid #000000;
+}
+
+.scheduleItem {
+  display: grid;
+  grid-template-columns: minmax(180px, 30%) minmax(0, 1fr);
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #000000;
+}
+
+.scheduleTime {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.scheduleTopic {
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.groupSection {
+  margin-top: 5rem;
+  padding: 4rem 4rem 4.75rem;
+  border: 1px solid #000000;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.groupContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+}
+
+.groupCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.groupArtwork {
+  margin: 0;
+}
+
+.groupArtworkImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.groupTitle {
+  margin: 0 0 1.25rem;
+  color: #000000;
+  font-family: 'BigCity Grotesque Pro', var(--font-heading), sans-serif;
+  font-size: clamp(1.75rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.groupText {
+  margin: 0 0 1.25rem;
+  max-width: 90%;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.groupNote {
+  margin: 0 0 2rem;
+  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.whatsappBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--color-primary);
+  border-radius: 0;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: none;
+  transition: all 0.2s ease;
+}
+
+.whatsappBtn:hover,
+.whatsappBtn:focus-visible {
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+}
+
+.whatsappArrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.whatsappIcon {
+  flex: 0 0 auto;
+  font-size: 1.15rem;
+  color: currentColor;
+}
+
+@media (max-width: 1024px) {
+  .scheduleBody {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .introBlock {
+    max-width: 100%;
+  }
+
+  .scheduleTime {
+    width: auto;
+  }
+
+  .groupContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .groupText {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .recorridosContainer {
+    padding: 0 1.25rem 72px;
+  }
+
+  .scheduleSection {
+    margin-top: 56px;
+  }
+
+  .introBlock {
+    margin-bottom: 2rem;
+  }
+
+  .featuredArtworkImage {
+    max-width: 100%;
+  }
+
+  .scheduleItem {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .scheduleTime,
+  .scheduleTopic {
+    min-width: 0;
+  }
+
+  .groupSection {
+    padding: 2rem 1.5rem;
+  }
+
+  .groupArtworkImage {
+    aspect-ratio: 4 / 5;
+  }
+
+  .whatsappBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,568 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  min-height: calc(100vh - 72px);
+  background: #ffffff;
+}
+
+.chatSection {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 84px 5% 88px;
+}
+
+.wrap {
+  font-family: var(--font-body);
+  background-color: #f4f4f0;
+  border: 1px solid #111111;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: clamp(460px, 70vh, 760px);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header {
+  background: #111111;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  border-bottom: 2px solid #111111;
+}
+
+.hmark {
+  width: 48px;
+  height: 48px;
+  display: block;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.htitle {
+  flex: 1;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #f4f4f0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.modeBadge {
+  border: 1px solid var(--color-primary);
+  color: #f4f4f0;
+  background: var(--color-primary);
+  padding: 7px 10px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.msgs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.msg {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  animation: fadeIn 0.3s ease;
+}
+
+.user {
+  flex-direction: row-reverse;
+}
+
+.bubble {
+  max-width: 75%;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.bot .bubble {
+  background: transparent;
+  color: #111111;
+  font-family: var(--font-body);
+  font-size: 16px;
+  border-left: 2px solid #111111;
+  padding-left: 16px;
+}
+
+.user .bubble {
+  background: #111111;
+  color: #f4f4f0;
+  padding: 12px 16px;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 300;
+}
+
+.routeCard {
+  background: #ffffff;
+  border: 1px solid #111111;
+  margin-top: 16px;
+  font-family: var(--font-body);
+}
+
+.routeHeader {
+  background: #111111;
+  color: #f4f4f0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.routeHeaderMeta {
+  margin-left: auto;
+  letter-spacing: 0;
+}
+
+.routeBody {
+  padding: 0;
+}
+
+.routeStop {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.routeStop:last-child {
+  border-bottom: none;
+}
+
+.stopNum {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #111111;
+  color: #111111;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stopInfo {
+  flex: 1;
+}
+
+.stopName {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.stopMeta {
+  font-size: 13px;
+  color: #555555;
+  margin-top: 4px;
+}
+
+.stopTime {
+  font-size: 12px;
+  color: #111111;
+  font-weight: 600;
+  margin-left: auto;
+  flex-shrink: 0;
+  padding-top: 2px;
+  background: #e0e0e0;
+  padding: 2px 6px;
+}
+
+.routeFooter {
+  padding: 12px 16px;
+  background: #f9f9f9;
+  border-top: 1px solid #111111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.routeFooter span {
+  font-size: 13px;
+  color: #555555;
+  text-transform: uppercase;
+}
+
+.routeFooter b {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111111;
+}
+
+.routeOutro {
+  margin-top: 16px;
+  font-style: italic;
+  color: #555555;
+}
+
+.typing {
+  display: flex;
+  gap: 4px;
+  padding: 8px 0;
+  align-items: center;
+}
+
+.typing span {
+  width: 6px;
+  height: 6px;
+  background: #111111;
+  animation: bounce 1.1s infinite;
+  display: block;
+}
+
+.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.quick {
+  padding: 0 24px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.qchip {
+  background: transparent;
+  border: 1px solid #111111;
+  padding: 8px 16px;
+  font-size: 12px;
+  color: #111111;
+  cursor: pointer;
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.qchip:hover {
+  background: #111111;
+  color: #f4f4f0;
+}
+
+.inputRow {
+  padding: 16px 24px;
+  border-top: 2px solid #111111;
+  background: #ffffff;
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.inp {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #111111;
+  border-radius: 0;
+  padding: 8px 0;
+  font-size: 15px;
+  font-family: var(--font-body);
+  color: #111111;
+  resize: none;
+  outline: none;
+  min-height: 40px;
+}
+
+.inp:focus {
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.inp::placeholder {
+  color: #888888;
+  font-style: italic;
+}
+
+.sendBtn {
+  width: 44px;
+  height: 44px;
+  background: #111111;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.sendBtn:hover {
+  background: #333333;
+}
+
+.sendBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.sendBtn svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  80%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  40% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 1024px) {
+  .chatSection {
+    padding: 80px 3% 80px;
+  }
+
+  .wrap {
+    max-width: 100%;
+  }
+
+  .header {
+    padding: 14px 20px;
+    gap: 12px;
+  }
+
+  .htitle {
+    font-size: 16px;
+  }
+
+  .msgs {
+    padding: 28px 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatSection {
+    padding: 72px 16px 64px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+  }
+
+  .hmark {
+    width: 40px;
+    height: 40px;
+  }
+
+  .htitle {
+    font-size: 14px;
+  }
+
+  .modeBadge {
+    padding: 6px 8px 5px;
+    font-size: 10px;
+  }
+
+  .wrap {
+    height: auto;
+    min-height: 460px;
+    max-width: 100%;
+    border: 1px solid #111111;
+  }
+
+  .msgs {
+    padding: 24px 16px;
+    gap: 1rem;
+  }
+
+  .bubble {
+    max-width: 100%;
+    font-size: 14px;
+  }
+
+  .routeCard {
+    margin-top: 14px;
+  }
+
+  .routeHeader {
+    padding: 10px 14px;
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .routeStop {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .stopNum {
+    width: 26px;
+    height: 26px;
+    font-size: 11px;
+  }
+
+  .stopName {
+    font-size: 13px;
+  }
+
+  .stopMeta {
+    font-size: 12px;
+  }
+
+  .stopTime {
+    font-size: 11px;
+    padding: 2px 5px;
+  }
+
+  .quick {
+    padding: 0 16px 14px;
+  }
+
+  .inputRow {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .modeBadge {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatSection {
+    padding: 64px 12px 52px;
+  }
+
+  .wrap {
+    min-height: 420px;
+    border: 1px solid #111111;
+  }
+
+  .header {
+    padding: 10px 12px;
+  }
+
+  .hmark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .htitle {
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  .modeBadge {
+    padding: 5px 6px;
+    font-size: 9px;
+  }
+
+  .msgs {
+    padding: 20px 12px;
+    gap: 16px;
+  }
+
+  .msg {
+    gap: 10px;
+  }
+
+  .bubble {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .user .bubble {
+    padding: 10px 12px;
+  }
+
+  .bot .bubble {
+    font-size: 14px;
+    padding-left: 12px;
+    border-left-width: 2px;
+  }
+
+  .routeCard {
+    margin-top: 12px;
+  }
+
+  .routeHeader {
+    padding: 8px 12px;
+    font-size: 10px;
+  }
+
+  .routeStop {
+    padding: 12px;
+  }
+
+  .stopNum {
+    width: 24px;
+    height: 24px;
+    font-size: 10px;
+  }
+
+  .stopName {
+    font-size: 12px;
+  }
+
+  .stopMeta {
+    font-size: 11px;
+  }
+
+  .stopTime {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .quick {
+    padding: 0 12px 12px;
+  }
+
+  .inputRow {
+    padding: 12px;
+  }
+}

@@ -1,0 +1,29 @@
+.layout-wrapper {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .layout-wrapper {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-wrapper {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .layout-wrapper {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}

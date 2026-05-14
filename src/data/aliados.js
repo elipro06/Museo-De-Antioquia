@@ -1,0 +1,18 @@
+export const logos = [
+  "/assets/images/Aliados/logo4.webp",
+  "/assets/images/Aliados/logo5.webp",
+  "/assets/images/Aliados/logo6.webp",
+  "/assets/images/Aliados/logo7.webp",
+  "/assets/images/Aliados/logo8.webp",
+  "/assets/images/Aliados/logo9.webp",
+  "/assets/images/Aliados/logo10.webp",
+  "/assets/images/Aliados/logo11.webp",
+  "/assets/images/Aliados/logo12.webp",
+  "/assets/images/Aliados/logo13.webp",
+  "/assets/images/Aliados/logo14.webp",
+  "/assets/images/Aliados/logo15.webp",
+  "/assets/images/Aliados/logo16.webp",
+  "/assets/images/Aliados/logo17.webp",
+  "/assets/images/Aliados/logo18.webp",
+  "/assets/images/Aliados/logo19.webp",
+];

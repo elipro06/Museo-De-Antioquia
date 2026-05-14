@@ -1,0 +1,260 @@
+/* ComoLlegar — página editorial */
+
+.page {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #ffffff;
+  color: #111111;
+}
+
+.pageContainer {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 6.5% 96px 5%;
+}
+
+.hero {
+  padding-bottom: 1.6rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.heroMeta {
+  margin-bottom: 1rem;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.heroHeadingColumn,
+.heroCopyColumn {
+  min-width: 0;
+}
+
+.title {
+  margin: 0 0 2.4rem;
+  color: #000000;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.subtitle {
+  max-width: 400px;
+  margin: 0 0 1.15rem;
+  color: #111111;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+}
+
+.heroText {
+  max-width: 420px;
+  margin: 0;
+  color: #555555;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.mapSection {
+  margin-bottom: 3.5rem;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  background: #ffffff;
+}
+
+.mapFrame {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: clamp(320px, 55vh, 520px);
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+.infoSection {
+  background: #ffffff;
+}
+
+.infoHeader {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 2.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.infoEyebrow {
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.infoLead {
+  max-width: 52ch;
+  margin: 0;
+  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #000000;
+  background: #ffffff;
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 100%;
+  padding: 3rem;
+  border-right: 1px solid #000000;
+}
+
+.infoBlock:last-child {
+  border-right: none;
+}
+
+.infoIcon {
+  align-self: center;
+  flex-shrink: 0;
+  margin-bottom: 1.15rem;
+  color: #A62651;
+  font-size: 2rem;
+  stroke-width: 1.3;
+}
+
+.infoTitle {
+  align-self: center;
+  margin: 0 0 1rem;
+  color: #000000;
+  font-family: 'BigCity Grotesque Pro', 'Inter', Arial, sans-serif;
+  font-size: clamp(1.55rem, 2vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+.infoText {
+  max-width: 28ch;
+  margin: 0;
+  color: #1a1a1a;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.94rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.inlineLink {
+  color: #1a1a1a;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.inlineLink:hover {
+  color: #A62651;
+}
+
+@media (max-width: 1024px) {
+  .pageContainer {
+    padding: 110px 6% 88px;
+  }
+
+  .heroGrid,
+  .infoHeader {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoBlock {
+    border-right: none;
+    border-bottom: 1px solid #000000;
+  }
+
+  .infoBlock:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageContainer {
+    padding: 104px 4vw 72px;
+  }
+
+  .title {
+    margin-bottom: 1.4rem;
+    font-size: 2.8rem;
+  }
+
+  .mapFrame {
+    min-height: 320px;
+  }
+
+  .infoBlock {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 96px 5% 72px;
+  }
+
+  .hero {
+    margin-bottom: 2rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .heroGrid {
+    gap: 1.5rem;
+  }
+
+  .title {
+    margin-bottom: 1.2rem;
+    font-size: clamp(1.8rem, 8vw, 2.7rem);
+  }
+
+  .mapSection {
+    margin-bottom: 2rem;
+  }
+
+  .infoHeader {
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .infoBlock {
+    gap: 0.75rem;
+  }
+}

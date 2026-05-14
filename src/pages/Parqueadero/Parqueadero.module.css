@@ -1,0 +1,158 @@
+.parqueaderoMain {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 120px 6.5% 96px 5%;
+  background: #ffffff;
+}
+
+.parqueaderoLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+.parqueaderoMapRect {
+  display: flex;
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.parqueaderoContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 3.5rem 3.25rem;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  border-left: 1px solid #e0e0e0;
+  background: #ffffff;
+}
+
+.parqueaderoTitle {
+  margin: 0 0 2rem;
+  color: #000000;
+  font-family: 'BigCity Grotesque Pro', 'Inter', Arial, sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.parqueaderoIntro {
+  max-width: 38ch;
+  margin: 0 0 1.75rem;
+  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.dataGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.dataRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dataLabel {
+  color: #333333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.dataValue {
+  flex-shrink: 0;
+  color: #000000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.parqueaderoNote {
+  margin: 0 0 2rem;
+  color: #777777;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.parqueaderoHorarioTitle {
+  margin: 0 0 0.35rem;
+  color: #000000;
+  font-family: 'BigCity Grotesque Pro', 'Inter', Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .parqueaderoMain {
+    padding: 110px 6% 88px;
+  }
+
+  .parqueaderoLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .parqueaderoMapRect {
+    min-height: 420px;
+  }
+
+  .parqueaderoContent {
+    border-left: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .parqueaderoMain {
+    padding: 96px 5% 72px;
+  }
+
+  .parqueaderoLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .parqueaderoMapRect {
+    min-height: 320px;
+  }
+
+  .parqueaderoContent {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .parqueaderoMain {
+    padding: 104px 4vw 72px;
+  }
+
+  .parqueaderoContent {
+    padding: 2rem 1.5rem;
+  }
+
+  .dataRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dataValue {
+    text-align: left;
+  }
+}

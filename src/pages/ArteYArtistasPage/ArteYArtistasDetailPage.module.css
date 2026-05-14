@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.page {
+  min-height: calc(100vh - 72px);
+  background: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pageFrame {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 88px 5% 96px;
+}
+
+.container {
+}
+
+.contextRow {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin-bottom: 0.9rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #5d4b37;
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.backButton:hover {
+  color: #111111;
+  transform: translateY(-1px);
+}
+
+.backButton:focus-visible {
+  outline: 3px solid rgba(144, 99, 48, 0.25);
+  outline-offset: 3px;
+}
+
+.backIcon {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 3rem;
+  align-items: start;
+}
+
+.imageColumn {
+  min-width: 0;
+}
+
+.artImageFrame {
+  background: #f4f4f4;
+}
+
+.artImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.contentColumn {
+  padding-top: 0;
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  padding-left: 0;
+}
+
+.spacerTop {
+  margin-top: 2.5rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: #666666;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  color: #111111;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+}
+
+.artist {
+  margin: 0.85rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.details {
+  margin: 0.5rem 0 0;
+  color: #555555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 2rem 0;
+}
+
+.artistPanel {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.artistImage {
+  width: 96px;
+  height: 96px;
+  border-radius: 999px;
+  object-fit: cover;
+  background: #f4f4f4;
+}
+
+.artistPanelLabel {
+  margin: 0;
+  color: #666666;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.artistPanelName {
+  margin: 0.35rem 0 0;
+  color: #111111;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.notFound {
+  min-height: calc(100vh - 72px);
+  display: grid;
+  place-items: center;
+  gap: 1rem;
+  padding: 120px 5% 96px;
+  background: #ffffff;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.notFoundTitle {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.backLink {
+  color: #111111;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .pageFrame {
+    padding: 80px 2.5% 96px;
+  }
+
+  .layout {
+    grid-template-columns: 48% 52%;
+    gap: 2.5rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 5.5vw, 3.2rem);
+  }
+
+  .artist {
+    font-size: 1rem;
+  }
+
+  .details {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+  }
+
+  .pageFrame {
+    padding: 72px 16px 80px;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contentColumn {
+    padding-top: 0;
+    position: static;
+  }
+
+  .contextRow {
+    gap: 1rem;
+  }
+
+  .backButton {
+    font-size: 0.75rem;
+  }
+
+  .title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .artistPanel {
+    grid-template-columns: 80px 1fr;
+    gap: 0.85rem;
+  }
+
+  .artistImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .artImageFrame {
+    max-width: 100%;
+  }
+
+  .divider {
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .pageFrame {
+    padding: 64px 12px 60px;
+  }
+
+  .title {
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+  }
+
+  .artist {
+    font-size: 0.95rem;
+  }
+
+  .details {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .artistPanel {
+    grid-template-columns: 72px 1fr;
+    gap: 0.7rem;
+  }
+
+  .artistImage {
+    width: 72px;
+    height: 72px;
+  }
+
+  .artistPanelName {
+    font-size: 0.9rem;
+  }
+
+  .notFound {
+    padding: 80px 16px 60px;
+  }
+
+  .notFoundTitle {
+    font-size: 1.75rem;
+  }
+}

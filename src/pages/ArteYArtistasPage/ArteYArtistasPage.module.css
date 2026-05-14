@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.page {
+	min-height: calc(100vh - 72px);
+	background: #ffffff;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.pageFrame {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 84px 5% 96px;
+}
+
+.pageContainer {
+}
+
+.pageHeader {
+	margin-bottom: 1.5rem;
+}
+
+.pageTitle {
+	color: #111111;
+	font-size: clamp(2.5rem, 4vw, 4rem);
+	font-weight: 700;
+	letter-spacing: -0.04em;
+	line-height: 0.98;
+}
+
+.pageIntro {
+	max-width: 720px;
+	margin: 1rem 0 0;
+	color: #555555;
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+.divider {
+	width: 100%;
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 3rem;
+}
+
+.filters {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 280px;
+	gap: 1.5rem 2rem;
+	align-items: end;
+	margin-bottom: 3rem;
+}
+
+.filterGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.filterLabel {
+	color: #666666;
+	font-size: 0.76rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.filterChips {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.filterChip {
+	border: 1px solid #dddddd;
+	background: #ffffff;
+	color: #111111;
+	padding: 0.72rem 1rem;
+	font: inherit;
+	font-size: 0.9rem;
+	font-weight: 500;
+	cursor: pointer;
+	transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.filterChipActive {
+	border-color: #111111;
+	background: #111111;
+	color: #ffffff;
+}
+
+.artistFilter {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.artistSelect {
+	min-height: 48px;
+	border: 1px solid #dddddd;
+	border-radius: 0;
+	background: #ffffff;
+	color: #111111;
+	padding: 0 0.95rem;
+	font: inherit;
+	font-size: 0.95rem;
+}
+
+.artGrid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 4rem 2rem;
+}
+
+.artCard {
+	display: flex;
+	flex-direction: column;
+	border: none;
+	box-shadow: none;
+	background: transparent;
+	color: #111111;
+	text-decoration: none;
+}
+
+.artImageContainer {
+	width: 100%;
+	background: #f4f4f4;
+	overflow: hidden;
+}
+
+.artImage {
+	display: block;
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	transition: opacity 0.28s ease;
+}
+
+.artCard:hover .artImage {
+	opacity: 0.8;
+}
+
+.artInfo {
+	margin-top: 1rem;
+}
+
+.artSala {
+	margin: 0 0 0.4rem;
+	color: #666666;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.artistName {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1.35;
+}
+
+.artTitle {
+	margin: 0.2rem 0 0;
+	font-size: 1rem;
+	font-style: italic;
+	font-weight: 400;
+	line-height: 1.45;
+}
+
+.artDetails {
+	margin: 0.35rem 0 0;
+	color: #555555;
+	font-size: 0.85rem;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+	.pageContainer {
+	}
+
+	.pageFrame {
+		padding-top: 84px;
+		padding-left: 4%;
+		padding-right: 4%;
+	}
+
+	.filters {
+		grid-template-columns: 1fr;
+		gap: 1.25rem;
+	}
+
+	.artGrid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 2.5rem 1.5rem;
+	}
+
+	.pageTitle {
+		font-size: clamp(2.25rem, 6vw, 3.5rem);
+	}
+}
+
+@media (max-width: 768px) {
+	.pageFrame {
+		padding: 80px 5% 72px;
+	}
+
+	.pageHeader {
+		margin-bottom: 1.25rem;
+	}
+
+	.pageTitle {
+		font-size: clamp(1.85rem, 7vw, 2.75rem);
+		letter-spacing: -0.035em;
+	}
+
+	.pageIntro {
+		font-size: 0.95rem;
+		max-width: 100%;
+	}
+
+	.divider {
+		margin-bottom: 2.25rem;
+	}
+
+	.filters {
+		gap: 1rem;
+	}
+
+	.filterLabel {
+		font-size: 0.7rem;
+	}
+
+	.artGrid {
+		grid-template-columns: 1fr;
+		gap: 2.5rem 0;
+	}
+
+	.artistSelect {
+		min-height: 44px;
+	}
+}
+
+@media (max-width: 480px) {
+	.pageFrame {
+		padding: 72px 12px 56px;
+	}
+
+	.pageTitle {
+		font-size: clamp(1.5rem, 7.5vw, 2.25rem);
+	}
+
+	.pageIntro {
+		font-size: 0.9rem;
+	}
+
+	.artGrid {
+		gap: 1.75rem;
+	}
+
+	.filterChips {
+		gap: 0.6rem;
+	}
+
+	.filterChip {
+		padding: 0.65rem 0.85rem;
+		font-size: 0.85rem;
+	}
+}

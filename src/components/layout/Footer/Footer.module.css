@@ -1,0 +1,226 @@
+﻿.footer {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding-top: 3rem;
+  border-top: 3px solid var(--color-primary);
+  font-family: var(--font-body);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto 3rem;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin-bottom: 1.5rem;
+  filter: brightness(0) invert(1);
+}
+
+.description {
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.input {
+  flex: 1 1 220px;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.input:focus-visible {
+  border-color: var(--color-primary);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(0.7rem, 2vw, 0.8rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.links a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-weight: 400;
+  transition: color var(--transition-fast);
+  letter-spacing: 0.01em;
+}
+
+.links a:hover,
+.links a:active {
+  color: var(--color-white);
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin-bottom: 0.4rem;
+  line-height: 1.5;
+}
+
+.textSecondary {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: clamp(0.82rem, 2vw, 0.9rem);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.emailLink {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: clamp(0.92rem, 2vw, 1rem);
+  transition: color var(--transition-fast);
+  margin-top: 0.25rem;
+}
+
+.emailLink:hover,
+.emailLink:active {
+  color: var(--color-white);
+}
+
+.bottomBar {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1.25rem 0;
+}
+
+.bottomContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.copyright {
+  font-size: clamp(0.78rem, 2vw, 0.88rem);
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.02em;
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.socials a {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  transition: color var(--transition-fast);
+}
+
+.socials a:hover,
+.socials a:active {
+  color: var(--color-white);
+}
+
+@media (min-width: 768px) {
+  .footer {
+    padding-top: 4rem;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .bottomContainer {
+    padding: 0 1.5rem;
+  }
+
+  .socials {
+    gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 2rem;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .bottomContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding: 0 2rem;
+  }
+
+  .socials {
+    justify-content: flex-end;
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container,
+  .bottomContainer {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}

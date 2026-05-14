@@ -1,0 +1,335 @@
+
+.section {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  padding: 54px 8%;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+.mainTitle {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.5em;
+  letter-spacing: -1px;
+  margin-top: 0;
+  margin-left: 0;
+  text-align: left;
+  color: #000;
+}
+
+.navButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.arrowLeft,
+.arrowRight {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.15rem;
+  font-weight: 300;
+  line-height: 1;
+  color: #000000;
+  transition: all 0.25s ease;
+}
+
+.arrowLeft:hover,
+.arrowRight:hover {
+  background-color: #000000;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.carouselContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.viewport {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.track {
+  display: flex;
+  gap: 3.5rem;
+  align-items: stretch;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  will-change: transform;
+}
+
+.card {
+  flex: 0 0 21rem;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  min-height: 0;
+  position: relative;
+  transition: transform 0.2s ease;
+  margin-bottom: 0;
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #f3f3f3;
+}
+
+.image {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+
+.cardContent {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding-top: 1.15rem;
+}
+
+.tipo {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: #7a1f3d;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.tipoDestacado {
+  color: #7a1f3d;
+}
+
+.cardTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #111111;
+  text-transform: none;
+  line-height: 1.2;
+  margin: 0 0 0.3rem;
+  transition: color 0.2s ease;
+}
+
+.descripcion {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #222222;
+  line-height: 1.55;
+  margin: 0;
+  max-width: 28ch;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+}
+
+.card:hover .cardTitle {
+  color: #7a1f3d;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carouselContainer {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section {
+    padding: 60px 6% 4rem;
+  }
+
+  .track {
+    gap: 2rem;
+  }
+
+  .card {
+    flex: 0 0 18rem;
+    min-width: 10rem;
+    max-width: 18rem;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .container,
+  .carouselContainer {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .section {
+    padding: 48px 5% 2rem;
+  }
+
+  .mainTitle {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .track {
+    gap: 1.2rem;
+  }
+
+  .card {
+    flex: 0 0 80%;
+    min-width: 0;
+    max-width: 80%;
+    min-height: auto;
+  }
+
+  .descripcion {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .navButtons {
+    display: none;
+  }
+
+  .arrowLeft,
+  .arrowRight {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .viewport {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 0.2rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .viewport::-webkit-scrollbar {
+    display: none;
+  }
+
+  .track {
+    width: max-content;
+    max-width: none;
+    flex-direction: row;
+    gap: 1rem;
+    transition: none;
+  }
+
+  .card {
+    flex: 0 0 85%;
+    width: 85%;
+    max-width: 85%;
+    flex-shrink: 0;
+    min-width: 0;
+    scroll-snap-align: center;
+  }
+
+  .descripcion {
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .container,
+  .carouselContainer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .track {
+    gap: 0.85rem;
+  }
+
+  .card {
+    flex: 0 0 88%;
+    width: 88%;
+    max-width: 88%;
+  }
+
+  .mainTitle {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+  }
+
+  .cardContent {
+    gap: 1rem;
+    padding-top: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 36px 16px 32px;
+  }
+}

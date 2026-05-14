@@ -1,0 +1,141 @@
+/* ── Exposiciones destacadas — Masonry ── */
+.expoSection {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 6rem 2rem 4rem;
+}
+
+.expoHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3rem;
+}
+
+.expoTitle {
+}
+
+/* ── Banner Museo 360 ── */
+.banner360 {
+  background-color: #f4f4f4;
+  padding: 8rem 2rem 9rem;
+}
+
+.banner360Inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.banner360Label {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.banner360Title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 1.25rem;
+  line-height: 1.1;
+}
+
+.banner360Text {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555;
+  max-width: 520px;
+  margin: 0 auto 2rem;
+}
+
+.banner360Btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-dark);
+  text-decoration: none;
+  border: 1.5px solid var(--color-dark);
+  padding: 0.75rem 2rem;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.banner360Btn:hover {
+  background-color: var(--color-dark);
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .expoSection {
+    padding: 4.5rem 1.5rem 3.5rem;
+  }
+
+  .expoHeader {
+    margin-bottom: 2.25rem;
+    gap: 1rem;
+  }
+
+  .banner360 {
+    padding: 6rem 1.5rem 6rem;
+  }
+
+  .banner360Inner {
+    max-width: 760px;
+  }
+}
+
+@media (max-width: 768px) {
+  .expoSection {
+    padding: 3.5rem 1rem 2.75rem;
+  }
+
+  .expoHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+  }
+
+  .banner360 {
+    padding: 4.5rem 1rem 4.5rem;
+  }
+
+  .banner360Title {
+    font-size: clamp(2rem, 10vw, 3rem);
+    line-height: 1;
+  }
+
+  .banner360Text {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .banner360Btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner360 {
+    padding: 3.75rem 0.875rem 3.75rem;
+  }
+
+  .banner360Label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .banner360Title {
+    font-size: clamp(1.75rem, 10.5vw, 2.5rem);
+  }
+}

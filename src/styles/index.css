@@ -1,0 +1,243 @@
+/* src/styles/index.css */
+
+/* 1. Fuente única: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Paleta editorial minimalista (neutros + acento museo) */
+  --color-primary: #A62651;
+  --color-dark: #1D1D1B;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-off-white: #FAFAFA;
+  --color-light-gray: #F5F5F5;
+  --color-mid-gray: #E0E0E0;
+  --color-text-secondary: #666666;
+  --color-text-muted: #999999;
+
+  /* Tipografía */
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Inter', sans-serif;
+
+  /* Transiciones */
+  --transition-fast: 0.3s ease;
+  --transition-smooth: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  /* Espaciado editorial */
+  --section-padding: 120px 8%;
+  --section-padding-mobile: 80px 5%;
+  --max-width: 1400px;
+  --focus-ring-color: #A62651;
+  --focus-ring-offset: 4px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  font-family: var(--font-body);
+  background-color: var(--color-off-white);
+  color: var(--color-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+picture,
+svg,
+canvas,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a,
+button,
+input,
+select,
+textarea,
+[role='button'],
+[tabindex] {
+  transition: outline-color var(--transition-fast), outline-offset var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+:where(a, button, input, select, textarea, [role='button'], [tabindex]:not([tabindex='-1'])):focus-visible {
+  outline: 2px solid var(--focus-ring-color) !important;
+  outline-offset: var(--focus-ring-offset) !important;
+  box-shadow: 0 0 0 1px var(--focus-ring-color) !important;
+}
+
+:where(a, button, input, select, textarea, [role='button'], [tabindex]:not([tabindex='-1'])):focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+:where(input, select, textarea):focus-visible {
+  border-color: var(--focus-ring-color) !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Textura sutil de ruido en fondo */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Clase para títulos con trazo editorial "tallado" */
+.editorial-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.editorial-title--accent {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+/* Utilidad: separador editorial */
+.editorial-divider {
+  border: none;
+  border-bottom: 1px solid var(--color-dark);
+  margin: 2rem 0;
+}
+
+/* Selección de texto */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ── Texture overlay — grano con linear-gradient overlay al 5% ── */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.05;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.04) 0%, transparent 40%, rgba(0,0,0,0.06) 100%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+/* ── Hand-drawn underline — subrayado estilo boceto ── */
+.hand-drawn {
+  position: relative;
+  text-decoration: none;
+}
+
+.hand-drawn::after {
+  content: '';
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  bottom: -2px;
+  height: 6px;
+  background: var(--color-primary);
+  opacity: 0.3;
+  border-radius: 40% 60% 55% 45% / 60% 40% 55% 50%;
+  transform: skewX(-3deg);
+  transition: opacity 0.15s;
+}
+
+.hand-drawn:hover::after {
+  opacity: 0.55;
+}
+
+/* Contenedor global para layout consistente */
+.layout-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: clamp(16px, 3vw, 48px);
+  padding-right: clamp(16px, 3vw, 48px);
+  box-sizing: border-box;
+}
+@media (max-width: 1200px) {
+  .layout-container {
+    padding-left: clamp(16px, 3vw, 36px);
+    padding-right: clamp(16px, 3vw, 36px);
+  }
+}
+@media (max-width: 900px) {
+  .layout-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

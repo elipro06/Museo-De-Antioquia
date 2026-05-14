@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.pageContainer {
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 84px 6.5% 96px 5%;
+}
+
+.hero {
+  padding-bottom: 4.2rem;
+  margin-bottom: 2.2rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.pageTitle {
+  margin: 0 0 2rem;
+  color: #111111;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.heroCopy {
+  max-width: 1280px;
+}
+
+.bodyText {
+  margin: 0 0 1.2rem;
+  color: #4a4a4a;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.sectionBlock {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  gap: 2.5rem;
+  padding: 0 0 6rem;
+  margin-bottom: 5rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.sectionHeadingColumn {
+  min-width: 0;
+}
+
+.sectionTitle {
+  position: sticky;
+  top: 120px;
+  margin: 0;
+  color: #111111;
+  font-size: clamp(1.7rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.sectionContentColumn {
+  min-width: 0;
+}
+
+.contentStack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.introActionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.programBlock,
+.subsectionBlock,
+.clubCard {
+  scroll-margin-top: 120px;
+}
+
+.programBlock {
+  margin-bottom: 5rem;
+}
+
+.programBlock:last-child {
+  margin-bottom: 0;
+}
+
+.patioSection {
+  margin-top: 2.5rem;
+}
+
+.programTitle {
+  margin: 0 0 0.9rem;
+  color: #111111;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.programCopy {
+  margin-top: 1.5rem;
+}
+
+.galleryShell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.scrollGallery {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 0 1rem;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollGallery::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollGalleryLarge {
+  gap: 1.25rem;
+}
+
+.galleryArrow {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 1px solid #ddd6d8;
+  border-radius: 0;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.08);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.galleryArrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 11px;
+  height: 11px;
+  border-top: 2px solid #7a1f3d;
+  border-right: 2px solid #7a1f3d;
+  transform-origin: center;
+}
+
+.galleryArrowLeft::before {
+  transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+.galleryArrowRight::before {
+  transform: translate(-65%, -50%) rotate(45deg);
+}
+
+.galleryArrow:hover {
+  background: #f7f0f3;
+  border-color: #c8b3bc;
+  transform: translateY(-1px);
+}
+
+.galleryArrow:hover::before {
+  border-color: #5f1830;
+}
+
+.galleryPlaceholder {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  min-width: min(300px, 100%);
+  width: 100%;
+  height: 200px;
+  background: #f4f4f4;
+  border: 1px solid #ececec;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.galleryPlaceholderLarge {
+  min-width: min(500px, 100%);
+  width: 100%;
+  height: 350px;
+  scroll-snap-align: start;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.embedPlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  margin: 2rem 0 0;
+  border: 1px dashed #cfcfcf;
+  background: #fafafa;
+  color: #7a7a7a;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  background: #7a1f3d;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s ease;
+}
+
+.virtualTourLink {
+  margin-top: 0;
+}
+
+.ctaLink:hover {
+  opacity: 0.9;
+}
+
+.clubGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.clubCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 0 1rem;
+}
+
+.clubDescription {
+  margin-bottom: 0;
+}
+
+.clubCtaLink {
+  margin-top: 0.2rem;
+}
+
+.clubImagePlaceholder {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  min-height: 220px;
+  background: #f4f4f4;
+  border: 1px solid #ececec;
+  overflow: hidden;
+}
+
+.clubImage,
+.libraryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.clubTitle,
+.listTitle {
+  margin: 0;
+  color: #111111;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.libraryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+}
+
+.libraryImagePlaceholder {
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  min-height: 280px;
+  background: #f4f4f4;
+  border: 1px solid #ececec;
+  overflow: hidden;
+}
+
+.cleanList {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.cleanListItem {
+  padding: 1rem 0;
+  border-bottom: 1px solid #e5e5e5;
+  color: #303030;
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .sectionBlock {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .sectionTitle {
+    position: static;
+  }
+
+  .clubGrid,
+  .libraryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .galleryPlaceholderLarge {
+    min-width: min(420px, 100%);
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 80px 5% 72px;
+  }
+
+  .hero {
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .sectionBlock {
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .galleryPlaceholder,
+  .galleryPlaceholderLarge {
+    min-width: 0;
+    width: 100%;
+    height: 220px;
+  }
+
+  .galleryShell {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .scrollGallery {
+    order: 1;
+  }
+
+  .galleryArrow {
+    display: none;
+  }
+
+  .embedPlaceholder {
+    min-height: 260px;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+}

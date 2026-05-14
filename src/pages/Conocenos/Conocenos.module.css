@@ -1,0 +1,210 @@
+.page {
+  background: #ffffff;
+  min-height: 100vh;
+  padding: 2.1rem 0 6rem;
+}
+
+.pageFrame {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.articleHeader {
+  grid-column: 1 / 5;
+  display: grid;
+  gap: 1.1rem;
+  position: sticky;
+  top: 120px;
+  align-self: start;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #4f4f4f;
+}
+
+.title {
+  margin: 0;
+  font-family: 'BigCity Grotesque Pro', var(--font-heading), sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  color: #000000;
+  text-wrap: pretty;
+}
+
+.heroImageContainer {
+  width: 100%;
+  overflow: hidden;
+  background: #f2f2f2;
+}
+
+.heroImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.authorBlock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.55rem;
+  align-items: baseline;
+  padding-top: 1rem;
+  margin-top: 0.8rem;
+  border-top: 1px solid #000000;
+  color: #3f3f3f;
+  border-radius: 0;
+}
+
+.authorLabel {
+  font-size: 0.98rem;
+  color: #555555;
+}
+
+.authorName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.authorMeta {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #505050;
+}
+
+.pullQuote {
+  margin: 4rem 0;
+  padding-left: 1.5rem;
+  border-left: 4px solid #000000;
+  font-family: 'BigCity Grotesque Pro', var(--font-heading), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #b55d3d;
+  font-style: normal;
+  text-wrap: balance;
+  border-radius: 0;
+}
+
+.pullQuotePrimary {
+  max-width: 24ch;
+}
+
+.pullQuoteSecondary {
+  max-width: 26ch;
+}
+
+.kicker {
+  max-width: 70ch;
+  margin: 0 0 2rem;
+  font-family: 'Montserrat', var(--font-body), sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #707070;
+}
+
+.articleBody {
+  grid-column: 6 / 13;
+  width: 100%;
+  min-width: 0;
+}
+
+.textSection {
+  display: block;
+}
+
+.paragraph {
+  max-width: 70ch;
+  margin: 0 0 1.35rem;
+  font-family: 'Montserrat', var(--font-body), sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.textSection:first-child .paragraph:first-child::first-letter {
+  float: left;
+  margin: 0.08rem 0.5rem 0 0;
+  font-family: 'BigCity Grotesque Pro', var(--font-heading), sans-serif;
+  font-size: 4rem;
+  line-height: 1;
+  color: #000000;
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .pageFrame {
+    max-width: var(--max-width);
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 1.15rem 0 4rem;
+  }
+
+  .pageFrame {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .articleHeader {
+    grid-column: 1 / -1;
+    position: static;
+  }
+
+  .authorBlock {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .articleBody {
+    grid-column: 1 / -1;
+  }
+
+  .kicker,
+  .paragraph,
+  .pullQuote,
+  .pullQuotePrimary,
+  .pullQuoteSecondary {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .paragraph {
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  .textSection:first-child .paragraph:first-child::first-letter {
+    font-size: 2.7rem;
+    margin-right: 0.35rem;
+  }
+
+  .pullQuote {
+    margin: 2.5rem 0;
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+}
