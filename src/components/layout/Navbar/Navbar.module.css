@@ -163,7 +163,14 @@
   .navLinks { display: none; }
 }
 
+@media (max-width: 768px) {
+  .ctaButton { display: none; }
+  .logoWrapper { margin-right: 0; }
+  .navActions { gap: 1.2rem; }
+  .logo { height: 1.9rem; }
+}
+
 @media (max-width: 600px) {
-  .logo { height: 1.2rem; }
   .inner { padding: 0 1.2rem; }
+  .logo { height: 1.7rem; }
 }

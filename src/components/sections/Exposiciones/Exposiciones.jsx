@@ -19,13 +19,30 @@ export const Exposiciones = () => {
   const [gap, setGap] = useState(0);
   const [isMobileView, setIsMobileView] = useState(typeof window !== 'undefined' ? window.innerWidth <= 768 : false);
 
+  const scrollMobile = (direction) => {
+    if (!viewportRef.current || !cardRefs.current[0]) return;
+    const cardW = cardRefs.current[0].offsetWidth;
+    const gapW = gap || 16;
+    const scrollAmount = cardW + gapW;
+    viewportRef.current.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
   const onPrev = () => {
-    if (isMobileView) return;
+    if (isMobileView) {
+      scrollMobile('left');
+      return;
+    }
     handlePrev();
   };
 
   const onNext = () => {
-    if (isMobileView) return;
+    if (isMobileView) {
+      scrollMobile('right');
+      return;
+    }
     handleNext();
   };
 

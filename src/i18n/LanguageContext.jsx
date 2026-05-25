@@ -5,29 +5,28 @@ const LANGUAGE_STORAGE_KEY = 'mda-language';
 const ATTRIBUTE_NAMES = ['placeholder', 'aria-label', 'title', 'alt'];
 const EXCLUDED_TAGS = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT']);
 
-function createTranslationMaps() {
-  const esToEn = new Map();
-  const enToEs = new Map();
 
-  TRANSLATION_PAIRS.forEach(([source, target]) => {
-    if (!source || !target) {
-      return;
-    }
-    // Guardar versiones lowerCase para hacer la búsqueda insensible a mayúsculas/minúsculas
-    const sourceKey = source.toLowerCase();
-    const targetKey = target.toLowerCase();
-    if (!esToEn.has(sourceKey)) {
-      esToEn.set(sourceKey, target);
-    }
-    if (!enToEs.has(targetKey)) {
-      enToEs.set(targetKey, source);
-    }
-  });
 
-  return { esToEn, enToEs };
+function normalizeString(str) {
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // quita tildes
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-const TRANSLATION_MAPS = createTranslationMaps();
+function robustTranslate(value, language = 'es') {
+  if (!value) return value;
+  const normValue = normalizeString(value);
+  for (const [es, en] of TRANSLATION_PAIRS) {
+    const normEs = normalizeString(es);
+    if (normValue === normEs) {
+      return language === 'en' ? en : es;
+    }
+  }
+  return value;
+}
 
 const LanguageContext = createContext({
   language: 'es',
@@ -68,32 +67,6 @@ export function translatePlainText(value, language = 'es') {
   return language === 'en' ? translateValue(value, entries) : value;
 }
 
-function translateStaticValue(value, language = 'es') {
-  if (!value) {
-    return value;
-  }
-
-  // Prueba con el valor original, capitalizado y en minúsculas
-  const variants = [
-    value,
-    value.charAt(0).toUpperCase() + value.slice(1).toLowerCase(),
-    value.toLowerCase()
-  ];
-
-  if (language === 'en') {
-    for (const variant of variants) {
-      const found = TRANSLATION_MAPS.esToEn.get(variant.toLowerCase());
-      if (found) return found;
-    }
-    return value;
-  }
-
-  for (const variant of variants) {
-    const found = TRANSLATION_MAPS.enToEs.get(variant.toLowerCase());
-    if (found) return found;
-  }
-  return value;
-}
 
 function shouldSkipElement(element) {
   if (!element) {
@@ -125,7 +98,8 @@ export function LanguageProvider({ children }) {
     setLanguageState((current) => (current === 'es' ? 'en' : 'es'));
   }, []);
 
-  const t = useCallback((value) => translateStaticValue(value, language), [language]);
+  // Usa traducción robusta para evitar problemas de coincidencia exacta
+  const t = useCallback((value) => robustTranslate(value, language), [language]);
 
   const processTextNode = useCallback((textNode) => {
     if (!textNode || !textNode.parentElement || shouldSkipElement(textNode.parentElement)) {

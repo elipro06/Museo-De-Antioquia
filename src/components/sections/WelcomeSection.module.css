@@ -1,11 +1,22 @@
+.welcomeMeta {
+  font-size: 15px;
+  color: #888;
+  font-weight: 400;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+  font-family: 'Inter', Arial, sans-serif;
+}
 /* Sección bienvenida MoMA style */
 .welcomeSection {
   width: 100%;
   background: #fff;
-  padding: 24px 8% 24px;
+  padding: 24px 8% 10px;
   border-bottom: none;
   font-family: 'Inter', Arial, sans-serif;
   position: relative;
+  margin-bottom: 0;
 }
 
 .welcomeDivider {

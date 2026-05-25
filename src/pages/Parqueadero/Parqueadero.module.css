@@ -33,7 +33,7 @@
 .parqueaderoTitle {
   margin: 0 0 2rem;
   color: #000000;
-  font-family: 'BigCity Grotesque Pro', 'Inter', Arial, sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 700;
   line-height: 0.98;
@@ -44,7 +44,7 @@
   max-width: 38ch;
   margin: 0 0 1.75rem;
   color: #333333;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
 }

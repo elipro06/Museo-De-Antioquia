@@ -21,10 +21,11 @@ const MenuOverlay = ({ isOpen, onClose }) => {
   // 1. Navegación Principal
   const menuItems = [
     { name: t('Inicio'), path: '/' },
+    { name: t('Planea tu visita'), path: '/planea-tu-visita' },
     { name: t('Manifiesto'), path: '/conocenos' },
     { name: t('Eventos'), path: '/eventos' },
-    { name: t('Arte'), path: '/arte-y-artistas' },
     { name: t('Exposiciones'), path: '/exposiciones' },
+    { name: t('Arte'), path: '/arte-y-artistas' },
     { name: t('Tienda'), path: 'https://tiendamuseodeantioquia.co', external: true },
   ];
 
@@ -53,59 +54,71 @@ const MenuOverlay = ({ isOpen, onClose }) => {
     },
   ];
 
-  return (
-    <div className={`${styles.menuOverlay} ${isOpen ? styles.open : ''}`}>
-      <div className={styles.menuDrawer}>
-        <div className={styles.menuHeader}>
-          <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar menú">
-            &times;
-          </button>
-        </div>
 
-        <div className={styles.menuContent}>
-          {/* Menú Superior */}
-          <nav className={styles.mainNav}>
-            {menuItems.map((item) => (
-              item.external ? (
-                <a key={item.name} href={item.path} target="_blank" rel="noopener noreferrer" className={styles.menuLink} onClick={onClose}>
-                  {item.name}
-                </a>
-              ) : (
-                <Link key={item.name} to={item.path} className={styles.menuLink} onClick={onClose}>
-                  {item.name}
-                </Link>
-              )
-            ))}
-          </nav>
+    // Handler para cerrar el menú al hacer click fuera del cajón
+    const handleOverlayClick = (e) => {
+      // Solo cerrar si el click es directamente en el overlay, no en el drawer
+      if (e.target === e.currentTarget) {
+        onClose();
+      }
+    };
 
-          {/* Sección Inferior de Utilidades */}
-          <div className={styles.utilitiesSection}>
-            <h3 className={styles.utilitiesTitle}>{t('UTILIDADES')}</h3>
-            <ul className={styles.utilitiesList}>
-              {utilityItems.map((item) => (
-                <li key={item.name}>
-                  {item.external ? (
-                    <a href={item.path} target="_blank" rel="noopener noreferrer" className={styles.utilityLink} onClick={onClose}>
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link to={item.path} className={styles.utilityLink} onClick={onClose}>
-                      {item.name}
-                    </Link>
-                  )}
-                </li>
+    return (
+      <div
+        className={`${styles.menuOverlay} ${isOpen ? styles.open : ''}`}
+        onClick={handleOverlayClick}
+      >
+        <div className={styles.menuDrawer}>
+          <div className={styles.menuHeader}>
+            <button className={styles.closeButton} onClick={onClose} aria-label="Cerrar menú">
+              &times;
+            </button>
+          </div>
+
+          <div className={styles.menuContent}>
+            {/* Menú Superior */}
+            <nav className={styles.mainNav}>
+              {menuItems.map((item) => (
+                item.external ? (
+                  <a key={item.name} href={item.path} target="_blank" rel="noopener noreferrer" className={styles.menuLink} onClick={onClose}>
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link key={item.name} to={item.path} className={styles.menuLink} onClick={onClose}>
+                    {item.name}
+                  </Link>
+                )
               ))}
-              <li>
-                <a href="#footer" className={styles.utilityLink} onClick={handleContactClick}>
-                  {t('Contacto')}
-                </a>
-              </li>
-            </ul>
+            </nav>
+
+            {/* Sección Inferior de Utilidades */}
+            <div className={styles.utilitiesSection}>
+              <h3 className={styles.utilitiesTitle}>{t('UTILIDADES')}</h3>
+              <ul className={styles.utilitiesList}>
+                {utilityItems.map((item) => (
+                  <li key={item.name}>
+                    {item.external ? (
+                      <a href={item.path} target="_blank" rel="noopener noreferrer" className={styles.utilityLink} onClick={onClose}>
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link to={item.path} className={styles.utilityLink} onClick={onClose}>
+                        {item.name}
+                      </Link>
+                    )}
+                  </li>
+                ))}
+                <li>
+                  <a href="#footer" className={styles.utilityLink} onClick={handleContactClick}>
+                    {t('Contacto')}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default MenuOverlay;

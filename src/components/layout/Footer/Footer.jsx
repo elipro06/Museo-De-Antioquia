@@ -47,12 +47,15 @@ export const Footer = () => {
         {/* Columna 3: Contacto */}
         <div className={styles.column}>
           <h4 className={styles.title}>{t('Visítanos')}</h4>
-          <p className={styles.text}>
-            Cra. 52 #52-43, Plaza Botero
-          </p>
-          <p className={styles.text}>
+          <a
+            className={styles.text}
+            href="https://www.google.com/maps/place/Museo+de+Antioquia/@6.2523647,-75.5714586,17z/data=!3m1!4b1!4m6!3m5!1s0x8e4428feb81e9f5d:0x213a72a1fad66b8b!8m2!3d6.2523594!4d-75.5688837!16s%2Fm%2F03hn23k?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Cra. 52 #52-43, Plaza Botero<br />
             Medellín, Antioquia, Colombia
-          </p>
+          </a>
           <p className={styles.textSecondary}>{t('Cerca de la estación Parque Berrío')}</p>
           <p className={styles.text}>Tel: +57 (604) 251 3636</p>
           <a href="mailto:info@museodeantioquia.co" className={styles.emailLink}>

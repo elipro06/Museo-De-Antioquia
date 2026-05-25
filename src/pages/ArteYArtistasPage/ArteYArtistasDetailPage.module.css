@@ -3,7 +3,7 @@
 .page {
   min-height: calc(100vh - 72px);
   background: #ffffff;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .pageFrame {
@@ -32,7 +32,7 @@
   border: none;
   background: transparent;
   color: #5d4b37;
-  font-family: inherit;
+  font-family: 'Inter', sans-serif;
   font-size: 0.78rem;
   font-weight: 600;
   line-height: 1;

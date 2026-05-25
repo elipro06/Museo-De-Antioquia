@@ -14,12 +14,15 @@ export default function Navbar() {
         {/* Logo a la izquierda con respiro visual editorial */}
         <div className={styles.logoWrapper}>
           <Link to="/" className={styles.logoLink} aria-label="Museo de Antioquia">
-            <img
-              src="/assets/images/Logos/Logo-Museo-NavBar.webp"
-              alt="Museo de Antioquia"
-              className={styles.logo}
-              draggable="false"
-            />
+            <picture>
+              <source media="(max-width: 768px)" srcSet="/assets/images/Logos/LogoMDABlanco.webp" />
+              <img
+                src="/assets/images/Logos/Logo-Museo-NavBar.webp"
+                alt="Museo de Antioquia"
+                className={styles.logo}
+                draggable="false"
+              />
+            </picture>
           </Link>
         </div>
         
@@ -35,6 +38,11 @@ export default function Navbar() {
             <li className={styles.navItem}>
               <Link to="/eventos" className={styles.navLink}>
                 {t('Eventos')}
+              </Link>
+            </li>
+            <li className={styles.navItem}>
+              <Link to="/exposiciones" className={styles.navLink}>
+                {t('Exposiciones')}
               </Link>
             </li>
             <li className={styles.navItem}>
