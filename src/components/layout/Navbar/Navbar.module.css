@@ -1,3 +1,17 @@
+/* === Soporte para safe-area (iPhone notch) y viewport-fit=cover === */
+@media (max-width: 900px) {
+  .navbar {
+    padding-top: env(safe-area-inset-top, 0px) !important;
+    padding-left: env(safe-area-inset-left, 0px) !important;
+    padding-right: env(safe-area-inset-right, 0px) !important;
+    box-sizing: border-box;
+  }
+  .inner {
+    padding-left: max(env(safe-area-inset-left, 0px), 1rem) !important;
+    padding-right: max(env(safe-area-inset-right, 0px), 1rem) !important;
+    box-sizing: border-box;
+  }
+}
 /* === CLASES CONDICIONALES DESDE REACT === */
 header.isMobile .navLinks {
   display: none !important;
