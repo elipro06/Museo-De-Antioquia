@@ -1,12 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import MenuOverlay from './MenuOverlay';
 import { useLanguage } from '../../../i18n/LanguageContext';
 
+// Hook para detectar ancho de ventana
+function useWindowWidth() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  return width;
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const width = useWindowWidth();
 
   return (
     <header className={`${styles.navbar} sticky-navbar`}>
@@ -28,39 +40,41 @@ export default function Navbar() {
         
         {/* Contenedor derecho: enlaces + acciones alineados horizontalmente */}
         <div className={styles.rightWrapper}>
-          {/* Grupo de enlaces */}
-          <ul className={styles.navLinks}>
-            <li className={styles.navItem}>
-              <Link to="/conocenos" className={styles.navLink}>
-                {t('Manifiesto')}
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to="/eventos" className={styles.navLink}>
-                {t('Eventos')}
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to="/exposiciones" className={styles.navLink}>
-                {t('Exposiciones')}
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <Link to="/arte-y-artistas" className={styles.navLink}>
-                {t('Arte')}
-              </Link>
-            </li>
-            <li className={styles.navItem}>
-              <a 
-                href="https://tiendamuseodeantioquia.co" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className={styles.navLink}
-              >
-                {t('Tienda')}
-              </a>
-            </li>
-          </ul>
+          {/* Grupo de enlaces solo fuera de tablet (ahora hasta 1366px) */}
+          { (width < 768 || width > 1366) && (
+            <ul className={styles.navLinks}>
+              <li className={styles.navItem}>
+                <Link to="/conocenos" className={styles.navLink}>
+                  {t('Manifiesto')}
+                </Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link to="/eventos" className={styles.navLink}>
+                  {t('Eventos')}
+                </Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link to="/exposiciones" className={styles.navLink}>
+                  {t('Exposiciones')}
+                </Link>
+              </li>
+              <li className={styles.navItem}>
+                <Link to="/arte-y-artistas" className={styles.navLink}>
+                  {t('Arte')}
+                </Link>
+              </li>
+              <li className={styles.navItem}>
+                <a 
+                  href="https://tiendamuseodeantioquia.co" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className={styles.navLink}
+                >
+                  {t('Tienda')}
+                </a>
+              </li>
+            </ul>
+          )}
 
           {/* Grupo de acciones (Botón CTA + Hamburguesa + Selector de Idioma) */}
           <div className={styles.navActions}>

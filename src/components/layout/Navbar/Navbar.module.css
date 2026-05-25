@@ -40,6 +40,15 @@
   .navLinks {
     display: none !important;
   }
+  .navLinks {
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    overflow: hidden !important;
+  }
 }
 
 @media (max-width: 1024px) {
