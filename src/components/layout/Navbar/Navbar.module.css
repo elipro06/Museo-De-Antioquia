@@ -252,18 +252,18 @@
 }
 
 /* ── Responsividad ── */
-@media (max-width: 1024px) {
-  .navLinks { display: none; }
-}
 
-@media (max-width: 768px) {
-  .ctaButton { display: none; }
-  .logoWrapper { margin-right: 0; }
-  .navActions { gap: 1.2rem; }
-  .logo { height: 1.9rem; }
-}
 
-@media (max-width: 600px) {
-  .inner { padding: 0 1.2rem; }
-  .logo { height: 1.7rem; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    z-index: 2000;
+    padding-top: env(safe-area-inset-top, 0px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
 }
