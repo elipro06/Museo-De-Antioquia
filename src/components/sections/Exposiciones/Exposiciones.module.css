@@ -78,6 +78,14 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .viewport {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+}
+
 .track {
   display: flex;
   gap: 3.5rem;

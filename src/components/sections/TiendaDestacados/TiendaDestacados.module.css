@@ -72,6 +72,16 @@
   gap: 1.75rem;
 }
 
+@media (max-width: 1024px) {
+  .grid {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 1.2rem;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;

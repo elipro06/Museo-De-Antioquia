@@ -75,6 +75,16 @@
   gap: 2rem;
 }
 
+@media (max-width: 1024px) {
+  .obrasGrid {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    gap: 1.2rem;
+  }
+}
+
 .obraCard {
   display: flex;
   flex-direction: column;
