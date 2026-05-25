@@ -1,22 +1,29 @@
 /* Forzar sticky header globalmente */
 .sticky-navbar {
-  position: sticky !important;
-  top: 0 !important;
-  z-index: 2000 !important;
+  position: sticky;
+  top: 0;
+  z-index: 2000;
   width: 100%;
   left: 0;
   right: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   html, body {
     overflow-x: hidden !important;
     width: 100vw;
     max-width: 100vw;
   }
   .sticky-navbar {
+    position: fixed !important;
+    top: env(safe-area-inset-top, 0px) !important;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    z-index: 2000;
     padding-top: env(safe-area-inset-top, 0px);
-    width: 100%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
 }
 
@@ -27,8 +34,15 @@
     max-width: 100vw;
   }
   .sticky-navbar {
+    position: fixed !important;
+    top: env(safe-area-inset-top, 0px) !important;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    z-index: 2000;
     padding-top: env(safe-area-inset-top, 0px);
-    width: 100%;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
   }
 }
 /* App.css — hereda variables de index.css, resets + utilidades visuales */

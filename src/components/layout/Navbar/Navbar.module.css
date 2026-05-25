@@ -1,3 +1,30 @@
+@media (max-width: 1024px) {
+  .navbar {
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    z-index: 2000;
+    padding-top: env(safe-area-inset-top, 0px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    position: fixed;
+    top: env(safe-area-inset-top, 0px);
+    left: 0;
+    right: 0;
+    width: 100vw;
+    max-width: 100vw;
+    z-index: 2000;
+    padding-top: env(safe-area-inset-top, 0px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+}
 /* === NAVBAR EDITORIAL - LOGO AJUSTADO === */
 
 .navbar {
@@ -16,7 +43,7 @@
   padding-top: env(safe-area-inset-top, 0px);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .navbar {
     padding-top: env(safe-area-inset-top, 0px);
     width: 100%;
