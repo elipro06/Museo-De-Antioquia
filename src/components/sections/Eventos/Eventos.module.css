@@ -280,6 +280,17 @@
 @media (max-width: 768px) {
   .eventosSection {
     padding: 25px 2% 25px 2%;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .contentWrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 
   .headerActions {
@@ -300,6 +311,9 @@
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 0.2rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .carouselViewport::-webkit-scrollbar {
@@ -309,7 +323,9 @@
   .carouselTrack {
     display: flex;
     gap: 1rem;
-    width: max-content;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .card {

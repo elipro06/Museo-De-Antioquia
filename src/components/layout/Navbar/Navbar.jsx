@@ -9,7 +9,7 @@ export default function Navbar() {
   const { language, setLanguage, t } = useLanguage();
 
   return (
-    <header className={styles.navbar}>
+    <header className={`${styles.navbar} sticky-navbar`}>
       <nav className={styles.inner}>
         {/* Logo a la izquierda con respiro visual editorial */}
         <div className={styles.logoWrapper}>
