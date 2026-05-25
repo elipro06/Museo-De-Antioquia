@@ -146,14 +146,38 @@
 }
 
 /* ── Responsividad ── */
+
 @media (max-width: 600px) {
+  .menuOverlay {
+    /* Asegura que el overlay cubra toda la pantalla y respete el notch */
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-sizing: border-box;
+    z-index: 99999;
+  }
   .menuDrawer {
-    max-width: 100%; /* En móviles ocupa toda la pantalla */
+    max-width: 100vw;
+    min-height: 100vh;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+    background: rgba(24, 24, 24, 0.98);
+    box-shadow: none;
   }
   .menuContent {
-    padding: 100px 2rem 2rem 2rem;
+    padding: calc(80px + env(safe-area-inset-top, 0px)) 1.2rem 2rem 1.2rem;
+    min-height: calc(100vh - 80px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
   }
   .menuHeader {
-    padding: 0 1.5rem;
+    padding: 0 1.2rem;
+    height: 80px;
+    min-height: 80px;
+    box-sizing: border-box;
   }
 }
