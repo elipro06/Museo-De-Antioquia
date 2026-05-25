@@ -40,8 +40,8 @@ export default function Navbar() {
         
         {/* Contenedor derecho: enlaces + acciones alineados horizontalmente */}
         <div className={styles.rightWrapper}>
-          {/* Grupo de enlaces solo fuera de tablet (ahora hasta 1366px) */}
-          { (width < 768 || width > 1366) && (
+          {/* Enlaces solo visibles en escritorio (>=1024px) */}
+          { width >= 1024 && (
             <ul className={styles.navLinks}>
               <li className={styles.navItem}>
                 <Link to="/conocenos" className={styles.navLink}>
@@ -76,12 +76,13 @@ export default function Navbar() {
             </ul>
           )}
 
-          {/* Grupo de acciones (Botón CTA + Hamburguesa + Selector de Idioma) */}
+          {/* Grupo de acciones: en móvil solo hamburguesa e idioma, en desktop también CTA */}
           <div className={styles.navActions}>
-            <Link to="/planea-tu-visita" className={styles.ctaButton}>
-              {t('Planea tu visita')}
-            </Link>
-            
+            {width >= 1024 && (
+              <Link to="/planea-tu-visita" className={styles.ctaButton}>
+                {t('Planea tu visita')}
+              </Link>
+            )}
             <button
               className={styles.hamburgerBtn}
               aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
@@ -92,7 +93,6 @@ export default function Navbar() {
               <span className={styles.hamburgerLine}></span>
               <span className={styles.hamburgerLine}></span>
             </button>
-
             <div className={styles.langSelector}>
               <button
                 className={`${styles.langBtn} ${language === 'es' ? styles.langActive : styles.langInactive}`}
