@@ -59,6 +59,7 @@
   align-items: flex-start;
   min-width: 0;
   gap: 0.75rem;
+  height: 100%;
 }
 
 
@@ -109,6 +110,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: auto;
 }
 
 .cardLink:hover {
