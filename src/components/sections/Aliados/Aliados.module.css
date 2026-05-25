@@ -31,14 +31,6 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
-  .slider {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scroll-behavior: smooth;
-  }
-}
-
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

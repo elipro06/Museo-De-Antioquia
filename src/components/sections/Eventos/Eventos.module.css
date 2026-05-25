@@ -92,18 +92,10 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
 }
 
-  .carouselViewport {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  @media (max-width: 1024px) {
-    .carouselViewport {
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scroll-behavior: smooth;
-    }
-  }
+.carouselViewport {
+  width: 100%;
+  overflow: hidden;
+}
 
 .carouselTrack {
   display: grid;
