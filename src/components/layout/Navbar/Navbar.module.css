@@ -1,3 +1,32 @@
+/* === MOBILE SAFE-AREA Y NAVBAR === */
+@media (max-width: 767px) {
+  .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1100;
+    height: calc(80px + env(safe-area-inset-top, 0px));
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-top: constant(safe-area-inset-top, 0px);
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    user-select: none;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+
+  /* Espacio superior para el contenido principal en móvil */
+  .mainContent {
+    padding-top: calc(80px + env(safe-area-inset-top, 0px));
+    padding-top: calc(80px + constant(safe-area-inset-top, 0px));
+  }
+}
 /* === Soporte para safe-area (iPhone notch) y viewport-fit=cover === */
 @media (max-width: 900px) {
   .navbar {
