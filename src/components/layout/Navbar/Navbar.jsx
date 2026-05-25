@@ -5,43 +5,81 @@ import MenuOverlay from './MenuOverlay';
 import { useLanguage } from '../../../i18n/LanguageContext';
 
 // Hook para detectar ancho de ventana
-function useWindowWidth() {
-  const [width, setWidth] = useState(window.innerWidth);
+function useWindowSize() {
+  const getDevice = () => {
+    const width = window.innerWidth;
+    const ua = navigator.userAgent;
+    // iPadOS 13+ reports as Macintosh, but has touch events
+    const isIpad = (/iPad/.test(ua)) ||
+      (/Macintosh/.test(ua) && 'ontouchend' in document) ||
+      (/iPad;/.test(ua));
+    // Android tablets: has Android but not Mobile, or has Tablet
+    const isAndroidTablet = (/Android/.test(ua) && !/Mobile/.test(ua)) || /Tablet/.test(ua);
+    const isTablet = isIpad || isAndroidTablet;
+    return { width, isIpad, isTablet };
+  };
+  const [device, setDevice] = useState(getDevice());
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
+    const handleResize = () => setDevice(getDevice());
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener('orientationchange', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('orientationchange', handleResize);
+    };
   }, []);
-  return width;
+  return device;
 }
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-  const width = useWindowWidth();
+  const { width, isTablet } = useWindowSize();
+
+  // Lógica ultra explícita y robusta: solo por ancho
+  // Móvil: width < 900
+  // Tablet: 900 <= width < 1200
+  // Escritorio: width >= 1200
+  const isTabletDevice = isTablet || (width >= 900 && width < 1200);
+  const isMobile = !isTabletDevice && width < 900;
+
+  // Clases condicionales para forzar estilos desde CSS
+  const headerClass = [
+    styles.navbar,
+    'sticky-navbar',
+    isMobile ? styles.isMobile : '',
+    isTablet ? styles.isTablet : '',
+    (!isMobile && !isTablet) ? styles.isDesktop : '',
+  ].join(' ');
 
   return (
-    <header className={`${styles.navbar} sticky-navbar`}>
+    <header className={headerClass}>
       <nav className={styles.inner}>
         {/* Logo a la izquierda con respiro visual editorial */}
         <div className={styles.logoWrapper}>
           <Link to="/" className={styles.logoLink} aria-label="Museo de Antioquia">
-            <picture>
-              <source media="(max-width: 768px)" srcSet="/assets/images/Logos/LogoMDABlanco.webp" />
+            {isMobile ? (
+              <img
+                src="/assets/images/Logos/LogoMDABlanco.webp"
+                alt="Museo de Antioquia"
+                className={styles.logo}
+                draggable="false"
+              />
+            ) : (
               <img
                 src="/assets/images/Logos/Logo-Museo-NavBar.webp"
                 alt="Museo de Antioquia"
                 className={styles.logo}
                 draggable="false"
               />
-            </picture>
+            )}
           </Link>
         </div>
         
         {/* Contenedor derecho: enlaces + acciones alineados horizontalmente */}
         <div className={styles.rightWrapper}>
-          {/* Enlaces solo visibles en escritorio (>=1024px) */}
-          { width >= 1024 && (
+          {/* Enlaces solo visibles en escritorio (>=1200px) */}
+          { width >= 1200 && (
             <ul className={styles.navLinks}>
               <li className={styles.navItem}>
                 <Link to="/conocenos" className={styles.navLink}>
@@ -76,9 +114,14 @@ export default function Navbar() {
             </ul>
           )}
 
-          {/* Grupo de acciones: en móvil solo hamburguesa e idioma, en desktop también CTA */}
+          {/* Acciones: en móvil solo hamburguesa e idioma, en tablet (>=768 y <1200) CTA, menú, idioma, en desktop todo */}
           <div className={styles.navActions}>
-            {width >= 1024 && (
+            {isTablet && (
+              <Link to="/planea-tu-visita" className={styles.ctaButton}>
+                {t('Planea tu visita')}
+              </Link>
+            )}
+            {width >= 1200 && (
               <Link to="/planea-tu-visita" className={styles.ctaButton}>
                 {t('Planea tu visita')}
               </Link>

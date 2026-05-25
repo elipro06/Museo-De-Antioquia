@@ -1,3 +1,106 @@
+/* === CLASES CONDICIONALES DESDE REACT === */
+header.isMobile .navLinks {
+  display: none !important;
+}
+header.isMobile .ctaButton {
+  display: none !important;
+}
+header.isMobile .logoWrapper {
+  margin-right: 1.2rem !important;
+}
+header.isMobile .rightWrapper {
+  gap: 1.2rem !important;
+}
+header.isMobile .logo {
+  height: 1.2rem !important;
+}
+
+header.isTablet .navLinks {
+  display: none !important;
+}
+header.isTablet .ctaButton {
+  display: inline-flex !important;
+}
+header.isTablet .logoWrapper {
+  margin-right: 2.2rem !important;
+}
+header.isTablet .rightWrapper {
+  gap: 2.2rem !important;
+}
+header.isTablet .logo {
+  height: 1.4rem !important;
+}
+
+header.isDesktop .navLinks {
+  display: flex !important;
+}
+header.isDesktop .ctaButton {
+  display: inline-flex !important;
+}
+header.isDesktop .logoWrapper {
+  margin-right: 3.5rem !important;
+}
+header.isDesktop .rightWrapper {
+  gap: 3.5rem !important;
+}
+header.isDesktop .logo {
+  height: 1.4rem !important;
+}
+/* === BREAKPOINTS SINCRONIZADOS CON LA LÓGICA DE REACT === */
+@media (max-width: 699px) {
+  .navLinks {
+    display: none !important;
+  }
+  .ctaButton {
+    display: none !important;
+  }
+  .logoWrapper {
+    margin-right: 1.2rem !important;
+  }
+  .rightWrapper {
+    gap: 1.2rem !important;
+  }
+  .logo {
+    height: 1.2rem !important;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199px) and (orientation: portrait),
+       (min-width: 900px) and (max-width: 1199px) and (orientation: landscape) {
+  .navLinks {
+    display: none !important;
+  }
+  .ctaButton {
+    display: inline-flex !important;
+  }
+  .logoWrapper {
+    margin-right: 2.2rem !important;
+  }
+  .rightWrapper {
+    gap: 2.2rem !important;
+  }
+  .logo {
+    height: 1.4rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .navLinks {
+    display: flex !important;
+  }
+  .ctaButton {
+    display: inline-flex !important;
+  }
+  .logoWrapper {
+    margin-right: 3.5rem !important;
+  }
+  .rightWrapper {
+    gap: 3.5rem !important;
+  }
+  .logo {
+    height: 1.4rem !important;
+  }
+}
 /* Eliminado: unificamos tablet vertical y horizontal en un solo media query */
 @media (min-width: 768px) and (max-width: 1024px) {
   .navbar, .inner, .rightWrapper, .navActions, .logoWrapper, .ctaButton, .hamburgerBtn, .langSelector {
