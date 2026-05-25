@@ -27,7 +27,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
-  max-width: 760px;
 }
 
 .title {
@@ -42,12 +41,13 @@
 
 .subtitle {
   margin: 0;
-  max-width: 58ch;
   color: #f0f0f0;
   font-family: 'Inter', sans-serif;
   font-size: 1.05rem;
   font-weight: 400;
   line-height: 1.65;
+  width: 100%;
+  max-width: none;
 }
 
 .headerActions {
@@ -241,6 +241,13 @@
   }
 
 @media (max-width: 900px) {
+  .headerLeft {
+    max-width: 760px;
+  }
+  .subtitle {
+    max-width: 58ch;
+    width: auto;
+  }
   .imageWrap {
     aspect-ratio: 16 / 3.2;
   }
