@@ -108,8 +108,7 @@ header.isDesktop .logo {
   }
 }
 
-@media (min-width: 700px) and (max-width: 1199px) and (orientation: portrait),
-       (min-width: 900px) and (max-width: 1199px) and (orientation: landscape) {
+@media (min-width: 700px) and (max-width: 1199px) {
   .navLinks {
     display: none !important;
   }
@@ -146,19 +145,6 @@ header.isDesktop .logo {
 }
 /* Eliminado: unificamos tablet vertical y horizontal en un solo media query */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .navbar, .inner, .rightWrapper, .navActions, .logoWrapper, .ctaButton, .hamburgerBtn, .langSelector {
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 0 !important;
-    box-sizing: border-box !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    gap: 0 !important;
-    flex-shrink: 1 !important;
-    flex-grow: 0 !important;
-    overflow-x: hidden !important;
-    white-space: nowrap !important;
-  }
   .navbar {
     position: fixed !important;
     top: env(safe-area-inset-top, 0px) !important;
@@ -167,26 +153,58 @@ header.isDesktop .logo {
     z-index: 2000 !important;
     padding-top: env(safe-area-inset-top, 0px) !important;
     box-shadow: 0 2px 12px rgba(0,0,0,0.08) !important;
+    width: 100% !important;
+    background: #191919 !important;
   }
   .inner {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 0 2.5rem !important;
+    box-sizing: border-box !important;
   }
-  .rightWrapper, .navActions {
+  .logoWrapper {
+    margin-right: 2.2rem !important;
+    flex-shrink: 0 !important;
+  }
+  .logo {
+    height: 1.4rem !important;
+    width: auto !important;
+  }
+  .rightWrapper {
     display: flex !important;
     flex-direction: row !important;
     align-items: center !important;
     justify-content: flex-end !important;
+    gap: 2.2rem !important;
+    flex: 1 !important;
     min-width: 0 !important;
-    flex-shrink: 1 !important;
-    flex-grow: 0 !important;
+  }
+  .navActions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 1.8rem !important;
+    flex-shrink: 0 !important;
+  }
+  .ctaButton {
+    display: inline-flex !important;
+    margin: 0 !important;
+  }
+  .hamburgerBtn {
+    display: flex !important;
+  }
+  .langSelector {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
   }
   .navLinks {
     display: none !important;
-  }
-  .navLinks {
     width: 0 !important;
     min-width: 0 !important;
     max-width: 0 !important;

@@ -218,10 +218,14 @@
   }
 
   .card {
-    flex: 0 0 9rem;
-    min-width: 7rem;
-    max-width: 9rem;
+    flex: 0 0 22vw;
+    min-width: 220px;
+    max-width: 340px;
     min-height: 0;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
   }
 }
 
@@ -246,10 +250,14 @@
   }
 
   .card {
-    flex: 0 0 60vw;
-    min-width: 0;
-    max-width: 60vw;
+    flex: 0 0 80vw;
+    min-width: 260px;
+    max-width: 90vw;
     min-height: auto;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 4 / 3;
   }
 
   .descripcion {

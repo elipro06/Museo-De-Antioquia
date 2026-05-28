@@ -90,10 +90,17 @@
   flex-direction: row-reverse;
 }
 
+
 .bubble {
   max-width: 75%;
   font-size: 15px;
   line-height: 1.6;
+}
+
+/* Ensure paragraphs in bot answers have visible spacing */
+.bot .bubble p {
+  margin: 0 0 1em 0;
+  padding: 0;
 }
 
 .bot .bubble {

@@ -13,14 +13,47 @@ export const PDF_READY_NOTE = 'Museum PDF loaded into the local knowledge base.'
 
 export const PDF_KNOWLEDGE_ENTRIES = [
 	{
+		id: 'eventos-museo',
+		keywords: [
+			'eventos', 'evento', 'actividades', 'actividad', 'agenda', 'programación', 'programacion',
+			'qué eventos hay', 'qué actividades hay', 'qué pasa en el museo', 'próximos eventos', 'eventos próximos',
+			'eventos del museo', 'agenda cultural', 'eventos culturales', 'talleres', 'charlas', 'conferencias',
+			'exposiciones temporales', 'qué hacer en el museo', 'qué actividades ofrece el museo',
+		],
+		textEs: 'El Museo de Antioquia organiza una variada agenda de eventos y actividades culturales, como exposiciones temporales, talleres, charlas, conferencias y recorridos especiales. La programación cambia periódicamente, por lo que se recomienda consultar la agenda actualizada en la web oficial o en las redes sociales del museo para conocer los próximos eventos y actividades disponibles.',
+		textEn: 'The Museum of Antioquia organizes a varied schedule of events and cultural activities, such as temporary exhibitions, workshops, talks, conferences, and special tours. The schedule changes periodically, so it is recommended to check the updated agenda on the official website or the museum’s social media to find out about upcoming events and available activities.',
+	},
+	{
+		id: 'obras-museo',
+		keywords: [
+			'obras del museo', 'obras de arte', 'colección del museo', 'cuadros famosos', 'esculturas museo', 'pinturas museo',
+			'qué obras hay', 'qué cuadros hay', 'qué esculturas hay', 'colección permanente', 'colección de arte',
+			'obras destacadas', 'artistas museo', 'arte museo', 'exposición permanente', 'obras importantes',
+			'mejores obras', 'obras famosas', 'obras de botero', 'obras de artistas', 'obras de la colección',
+			'qué puedo ver', 'qué arte hay', 'qué artistas están', 'qué artistas expone el museo',
+		],
+		textEs: 'El Museo de Antioquia tiene una colección diversa de obras de arte: pinturas, esculturas y piezas de artistas nacionales e internacionales.\n\nDestacan las obras de Fernando Botero, arte moderno y contemporáneo, cerámicas y fotografías.\n\nLa colección abarca distintas épocas y estilos, mostrando la riqueza artística de Antioquia y Colombia.',
+		textEn: 'The Museum of Antioquia has a diverse collection of artworks: paintings, sculptures, and pieces by national and international artists.\n\nHighlights include works by Fernando Botero, modern and contemporary art, ceramics, and photographs.\n\nThe collection covers different periods and styles, showcasing the artistic richness of Antioquia and Colombia.',
+	},
+	{
 		id: 'museo-360',
-		keywords: ['museo 360', 'palacio municipal', '80 puertas', 'casa del encuentro historia', 'maria del rosario escobar', 'conocenos'],
+		keywords: [
+			'museo 360', 'palacio municipal', '80 puertas', 'casa del encuentro historia', 'maria del rosario escobar', 'conocenos',
+			'museo de antioquia', 'historia del museo', 'información del museo', 'sobre el museo', 'quién fundó el museo', 'fundadores museo',
+			'qué es museo 360', 'proyecto museo 360', 'accesos museo', 'programas museo', 'comunidad museo', 'centro de medellín',
+			'qué programas tiene el museo', 'qué actividades hay en el museo', 'qué puedo hacer en el museo', 'qué proyectos tiene el museo',
+		],
 		textEs: 'El Museo de Antioquia impulsa el proyecto Museo 360 desde el Palacio Municipal, aprovechando sus multiples accesos para conectar las colecciones con el centro de Medellin y con programas como Calle Museo, Dialogos con Sentido, La Banca Azul, El Caldero y Ver para Leer. Tambien resalta el trabajo con la Casa del Encuentro y las comunidades del entorno como parte central de la mision del museo.',
 		textEn: 'The Museum of Antioquia advances the Museo 360 project from the Palacio Municipal, using its many entrances to connect the collection with downtown Medellin and with programs such as Calle Museo, Dialogos con Sentido, La Banca Azul, El Caldero, and Ver para Leer. It also highlights Casa del Encuentro and community work around the museum as central to the institution\'s mission.',
 	},
 	{
 		id: 'programas-educacion',
-		keywords: ['exploradores del arte', 'dialogos con sentido', 'visual lab', 'calle museo', 'laboratorio de mediacion', 'yo maestre', 'programas educativos', 'programas del museo', 'education programs', 'teacher program'],
+		keywords: [
+			'exploradores del arte', 'dialogos con sentido', 'visual lab', 'calle museo', 'laboratorio de mediacion', 'yo maestre',
+			'programas educativos', 'programas del museo', 'education programs', 'teacher program',
+			'oferta educativa', 'talleres para niños', 'talleres para jovenes', 'talleres para adultos', 'actividades educativas',
+			'qué programas educativos hay', 'qué talleres hay', 'qué actividades educativas ofrece el museo', 'educación en el museo',
+		],
 		textEs: 'La oferta educativa incluye programas concretos: Exploradores del Arte para ninos y ninas de 2 a 5 anos; Dialogos con Sentido para infancias entre 6 y 12 anos del centro de Medellin; Visual Lab para jovenes entre 13 y 18 anos; Calle Museo como experiencia artistica y territorial; Laboratorio de Mediacion para mediadores, artistas y agentes culturales; y Yo Maestre como formacion para docentes que usan el museo como aula expandida.',
 		textEn: 'The education offer includes specific programs: Exploradores del Arte for children ages 2 to 5; Dialogos con Sentido for children ages 6 to 12 in downtown Medellin; Visual Lab for teenagers ages 13 to 18; Calle Museo as an artistic and territorial experience; Laboratorio de Mediacion for mediators, artists, and cultural agents; and Yo Maestre as teacher training that uses the museum as an expanded classroom.',
 	},
@@ -39,7 +72,7 @@ export const PDF_KNOWLEDGE_ENTRIES = [
 	{
 		id: 'horarios-tarifas-visita',
 		keywords: ['horarios', 'tarifas', 'price', 'prices', 'ticket', 'tickets', 'gratis', 'free admission', 'animales de soporte emocional', 'support animal', 'fotografias', 'flash'],
-		textEs: 'El museo abre de lunes a viernes de 10:00 a.m. a 5:30 p.m. y sabados, domingos y festivos de 10:00 a.m. a 4:30 p.m. Las tarifas son COP 18.000 para nacionales, COP 46.000 para extranjeros y COP 14.000 para estudiantes y mayores de 62 anos, con ingreso gratuito para varios grupos locales. Tambien recuerda que los alimentos solo se consumen en cafe y restaurante, en la Sala Botero no se toman fotos y en las otras salas deben ser sin flash.',
+		textEs: 'El museo abre de lunes a viernes de 10:00 a.m. a 5:30 p.m.\n\nSábados, domingos y festivos de 10:00 a.m. a 4:30 p.m.\n\nLas tarifas son COP 18.000 para nacionales, COP 46.000 para extranjeros y COP 14.000 para estudiantes y mayores de 62 años, con ingreso gratuito para varios grupos locales.\n\nRecuerda que los alimentos solo se consumen en café y restaurante. En la Sala Botero no se toman fotos y en las otras salas deben ser sin flash.',
 		textEn: 'The museum opens Monday to Friday from 10:00 a.m. to 5:30 p.m. and Saturdays, Sundays, and holidays from 10:00 a.m. to 4:30 p.m. Ticket prices are COP 18,000 for Colombian visitors, COP 46,000 for international visitors, and COP 14,000 for students and visitors over 62, with free admission for several local visitor groups. It also reminds visitors that food is only allowed in the cafe and restaurant areas, photography is not allowed in the Botero galleries, and photos in other galleries should be taken without flash.',
 	},
 	{

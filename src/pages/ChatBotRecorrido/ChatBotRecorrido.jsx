@@ -999,7 +999,20 @@ function buildEventResponse(query, language) {
 }
 
 function buildLocalKnowledgeResponse(query, language) {
+
   const normalized = normalizeText(query);
+
+  // Si la consulta es exactamente "evento" o "eventos" (en ambos idiomas), responde SOLO con eventos
+  if (["evento", "eventos", "event", "events"].includes(normalized.trim())) {
+    const eventResponse = buildEventResponse(query, language);
+    if (eventResponse) return eventResponse;
+  }
+
+  // Si la consulta es exactamente "obra", "obras", "work", "works", responde SOLO con obras
+  if (["obra", "obras", "work", "works"].includes(normalized.trim())) {
+    const artworkResponse = buildArtworkResponse(query, language);
+    if (artworkResponse) return artworkResponse;
+  }
 
   const faq = buildFaqFallback(normalized, language);
   if (faq) {
@@ -1261,15 +1274,21 @@ function BotMessage({ text, isBot, language }) {
     return <RouteCard route={route} rawText={sanitizedText} language={language} />;
   }
 
-  const lines = sanitizedText.split('\n');
+  // Split by double newlines for paragraphs
+  const paragraphs = sanitizedText.split(/\n{2,}/);
 
   return (
     <>
-      {lines.map((line, index) => (
-        <span key={`${line}-${index}`}>
-          {line}
-          {index < lines.length - 1 ? <br /> : null}
-        </span>
+      {paragraphs.map((para, pIdx) => (
+        <p key={`para-${pIdx}`} style={{ marginBottom: '1em', whiteSpace: 'pre-line' }}>
+          {/* Replace single \n with <br /> for line breaks within paragraphs */}
+          {para.split('\n').map((line, lIdx, arr) => (
+            <React.Fragment key={`line-${lIdx}`}>
+              {line}
+              {lIdx < arr.length - 1 ? <br /> : null}
+            </React.Fragment>
+          ))}
+        </p>
       ))}
     </>
   );

@@ -34,12 +34,10 @@ function useWindowSize() {
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
-  const { width, isTablet } = useWindowSize();
 
-  // Lógica ultra explícita y robusta: solo por ancho
-  // Móvil: width < 900
-  // Tablet: 900 <= width < 1200
-  // Escritorio: width >= 1200
+  const { width, isTablet } = useWindowSize();
+  // Lógica robusta: solo por ancho y tipo
+  // Tablet: (isTablet || (width >= 900 && width < 1200))
   const isTabletDevice = isTablet || (width >= 900 && width < 1200);
   const isMobile = !isTabletDevice && width < 900;
 
@@ -48,8 +46,8 @@ export default function Navbar() {
     styles.navbar,
     'sticky-navbar',
     isMobile ? styles.isMobile : '',
-    isTablet ? styles.isTablet : '',
-    (!isMobile && !isTablet) ? styles.isDesktop : '',
+    isTabletDevice ? styles.isTablet : '',
+    (!isMobile && !isTabletDevice) ? styles.isDesktop : '',
   ].join(' ');
 
   return (
@@ -114,14 +112,14 @@ export default function Navbar() {
             </ul>
           )}
 
-          {/* Acciones: en móvil solo hamburguesa e idioma, en tablet (>=768 y <1200) CTA, menú, idioma, en desktop todo */}
+          {/* Acciones: en móvil solo hamburguesa e idioma, en tablet (portrait y landscape) y desktop: CTA, menú, idioma */}
           <div className={styles.navActions}>
-            {isTablet && (
+            {isTabletDevice && (
               <Link to="/planea-tu-visita" className={styles.ctaButton}>
                 {t('Planea tu visita')}
               </Link>
             )}
-            {width >= 1200 && (
+            {width >= 1200 && !isTabletDevice && (
               <Link to="/planea-tu-visita" className={styles.ctaButton}>
                 {t('Planea tu visita')}
               </Link>
